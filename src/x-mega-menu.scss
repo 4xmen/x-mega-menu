@@ -106,6 +106,7 @@ $invert-text-color: white;
   transition: 700ms;
   opacity: 0;
   position: absolute;
+  z-index: 999;
 
   &.x-active {
     transform: scaleY(1) translateY(0);
@@ -153,7 +154,7 @@ $invert-text-color: white;
   z-index: 999999;
 
 
-  &.x-active{
+  &.x-active {
     width: 100%;
   }
 
@@ -163,7 +164,9 @@ $invert-text-color: white;
   }
 
   .x-side-menu {
+    z-index: 9;
     user-select: none;
+    box-shadow: -1px 0 7px #111, 1px 0 7px #111;
     background: $main-color;
     width: 300px;
     overflow-y: auto;
@@ -183,7 +186,7 @@ $invert-text-color: white;
       border-top: 1px solid darken($main-color, 5);
       position: relative;
 
-      &:last-child{
+      &:last-child {
         border-bottom: 1px solid darken($main-color, 5);
       }
 
@@ -207,18 +210,20 @@ $invert-text-color: white;
           align-items: center;
           justify-content: center;
           font-size: 20px;
-          background: darken($main-color,1);
+          background: darken($main-color, 1);
           cursor: pointer;
-          &:hover{
-            background: lighten($main-color,1);
+
+          &:hover {
+            background: lighten($main-color, 1);
           }
 
 
-          a{
+          a {
             display: block;
           }
         }
-        &.x-right{
+
+        &.x-right {
           .x-next {
             right: auto;
             left: 0;
@@ -226,7 +231,7 @@ $invert-text-color: white;
         }
       }
 
-      &.x-right{
+      &.x-right {
 
       }
 
@@ -234,12 +239,13 @@ $invert-text-color: white;
         display: none;
       }
     }
-    .x-close{
+
+    .x-close {
       float: right;
-      padding: 10px .5em;
+      padding: 10px .46em;
       font-size: 35px;
       cursor: pointer;
-      background: darken($main-color,4);
+      background: darken($main-color, 4);
     }
   }
 }
@@ -274,12 +280,96 @@ $invert-text-color: white;
   }
 }
 
-.x-blur{
-  filter: blur(5px)  grayscale(1);
+.x-multi-level-menu {
+  position: absolute;
+  top: 0;
+  width: 290px;
+  background: $main-color;
+  height: 100vh;
+  box-shadow: -1px 0 7px #111, 1px 0 7px #111;
+  overflow-y: auto;
+
+  h2, h3, h4, h5 {
+    padding: .5em .7em !important;
+    text-align: center;
+    background: lighten($main-color, 3);
+  }
+
+  li {
+    padding: 0;
+    list-style: none;
+
+    .x-next {
+      border: 1px solid darken($main-color, 5);
+      border-bottom: 0;
+      border-top: 0;
+      transition: 300ms;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      position: absolute;
+      width: 45px;
+      padding-left: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      background: darken($main-color, 1);
+      cursor: pointer;
+
+      &:hover {
+        background: lighten($main-color, 1);
+      }
+
+
+      a {
+        display: block;
+      }
+    }
+
+    &.x-right {
+      .x-next {
+        right: auto;
+        left: 0;
+      }
+    }
+
+  }
+
+  li.x-list {
+    padding: 1em;
+    background: lighten($main-color, 5);
+    border-top: 1px solid darken($main-color, 5);
+    position: relative;
+
+    ul {
+      display: none;
+    }
+  }
+
+  .x-back {
+    padding: .75em;
+    text-align: center;
+    border-bottom: 1px solid darken($main-color, 4);
+
+    .x-back-btn {
+      float: right;
+      padding: 10px .46em;
+      font-size: 20px;
+      cursor: pointer;
+      margin: -.75em;
+      background: darken($main-color, 4);
+    }
+  }
+}
+
+.x-blur {
+  filter: blur(5px) grayscale(.75);
   user-select: none;
   transition: 100ms;
   transition-delay: 100ms;
 }
+
 //keyframes
 @keyframes border-color-play {
 

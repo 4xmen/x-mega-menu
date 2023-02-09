@@ -69,7 +69,8 @@ body {
   transition-timing-function: ease-out;
   transition: 700ms;
   opacity: 0;
-  position: absolute; }
+  position: absolute;
+  z-index: 999; }
   .x-sub-menu.x-active {
     transform: scaleY(1) translateY(0);
     opacity: 0.9; }
@@ -108,7 +109,9 @@ body {
     padding: 1em;
     text-align: center; }
   #x-side-menu .x-side-menu {
+    z-index: 9;
     user-select: none;
+    box-shadow: -1px 0 7px #111, 1px 0 7px #111;
     background: darkred;
     width: 300px;
     overflow-y: auto;
@@ -156,7 +159,7 @@ body {
         display: none; }
     #x-side-menu .x-side-menu .x-close {
       float: right;
-      padding: 10px .5em;
+      padding: 10px .46em;
       font-size: 35px;
       cursor: pointer;
       background: #770000; }
@@ -177,8 +180,66 @@ body {
     .x-responsive.x-mega-menu > li.x-small {
       grid-column: span 1; }
 
+.x-multi-level-menu {
+  position: absolute;
+  top: 0;
+  width: 290px;
+  background: darkred;
+  height: 100vh;
+  box-shadow: -1px 0 7px #111, 1px 0 7px #111;
+  overflow-y: auto; }
+  .x-multi-level-menu h2, .x-multi-level-menu h3, .x-multi-level-menu h4, .x-multi-level-menu h5 {
+    padding: .5em .7em !important;
+    text-align: center;
+    background: #9a0000; }
+  .x-multi-level-menu li {
+    padding: 0;
+    list-style: none; }
+    .x-multi-level-menu li .x-next {
+      border: 1px solid #720000;
+      border-bottom: 0;
+      border-top: 0;
+      transition: 300ms;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      position: absolute;
+      width: 45px;
+      padding-left: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      background: #860000;
+      cursor: pointer; }
+      .x-multi-level-menu li .x-next:hover {
+        background: #900000; }
+      .x-multi-level-menu li .x-next a {
+        display: block; }
+    .x-multi-level-menu li.x-right .x-next {
+      right: auto;
+      left: 0; }
+  .x-multi-level-menu li.x-list {
+    padding: 1em;
+    background: #a50000;
+    border-top: 1px solid #720000;
+    position: relative; }
+    .x-multi-level-menu li.x-list ul {
+      display: none; }
+  .x-multi-level-menu .x-back {
+    padding: .75em;
+    text-align: center;
+    border-bottom: 1px solid #770000; }
+    .x-multi-level-menu .x-back .x-back-btn {
+      float: right;
+      padding: 10px .46em;
+      font-size: 20px;
+      cursor: pointer;
+      margin: -.75em;
+      background: #770000; }
+
 .x-blur {
-  filter: blur(5px) grayscale(1);
+  filter: blur(5px) grayscale(0.75);
   user-select: none;
   transition: 100ms;
   transition-delay: 100ms; }

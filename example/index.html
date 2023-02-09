@@ -8,6 +8,17 @@
     <title>x-mega-menu example </title>
     <link rel="stylesheet" href="../dist/x-mega-menu.css">
     <script src="../src/x-mega-menu.js"></script>
+    <style>
+        .demo {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            text-align: center;
+        }
+
+        .demo img {
+            max-width: 90%;
+        }
+    </style>
 </head>
 <body dir="rtl">
 <nav>
@@ -41,7 +52,16 @@
                     <ul>
                         <li><a href="">sub sub item 01</a></li>
                         <li><a href="">sub sub item 02</a></li>
-                        <li><a href="">sub sub item 03</a></li>
+                        <li>
+                            <a href="">sub sub item 03</a>
+                            <ul>
+                                <li><a href="">sub sub sub item 001</a></li>
+                                <li><a href="">sub sub sub item 002</a></li>
+                                <li><a href="">sub sub sub item 003</a></li>
+                                <li><a href="">sub sub sub item 004</a></li>
+                                <li><a href="">sub sub sub item 005</a></li>
+                            </ul>
+                        </li>
                         <li><a href="">sub sub item 04</a></li>
                         <li><a href="">sub sub item 05</a></li>
                     </ul>
@@ -66,9 +86,9 @@
             </ul>
         </li>
         <li>
-            <a href="">
-                menu item 2
-            </a>
+
+            menu item 2
+
             <ul>
                 <li>
                     <h3>
@@ -143,6 +163,17 @@
     cupiditate deleniti, dolores earum eos est incidunt non numquam quaerat quas quibusdam quod rem similique tempore
     velit!
 </p>
+<div class="demo">
+    <div>
+        <img src="https://www.gentoo.org/assets/img/logo/gentoo-horizontal.svg" alt="gento logo">
+    </div>
+    <div>
+        <img src="https://www.debian.org/logos/openlogo-nd-100.jpg" alt="debian logo">
+    </div>
+    <div>
+        <img src="https://assets.ubuntu.com/v1/ff6a9a38-ubuntu-logo-2022.svg" alt="">
+    </div>
+</div>
 <p>
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias architecto culpa cum harum libero omnis totam vel.
     Ad architecto atque beatae consectetur, dolor ea eaque illo ipsa ipsum laboriosam laudantium obcaecati officiis
@@ -156,10 +187,12 @@
     quibusdam ratione recusandae repellendus reprehenderit rerum sunt suscipit, tempore ut vero voluptatibus!
     Laboriosam.
 </p>
+<img src="img/wave.svg" width="100%" alt="" style="position: fixed;bottom: -10px;">
 <script>
     xMegaMenu('#mega-menu', {
         responseWidth: 1000,
         isRtl: true,
+        mainTitle: '🖤 xStack menu 🖤',
     });
 </script>
 </body>
