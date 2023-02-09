@@ -5,14 +5,12 @@
 }
 
 body {
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
-:root {
-  --toggle-menu: 1024px;
-}
 
 $main-color: darkred;
+$invert-text-color: white;
 
 .x-mega-menu {
   background: #efefef;
@@ -56,9 +54,10 @@ $main-color: darkred;
       }
     }
 
-    &.x-small{
+    &.x-small {
       grid-column: span 1;
     }
+
     &:before {
       height: 2px;
       content: ' ';
@@ -119,6 +118,12 @@ $main-color: darkred;
 
     > li {
       border-right: 1px solid silver;
+      padding: 1em;
+
+      &.x-highlight {
+        background: $main-color;
+        color: $invert-text-color;
+      }
     }
 
     img {
@@ -131,6 +136,90 @@ $main-color: darkred;
 
 #x-toggle {
   display: none;
+}
+
+// side menu for responsive
+#x-side-menu {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: #888888bb;
+
+  h3 {
+    padding: 1em;
+    text-align: center;
+  }
+
+  .x-side-menu {
+    background: $main-color;
+    width: 300px;
+    overflow-y: auto;
+    color: $invert-text-color;
+    height: 100vh;
+    box-sizing: border-box;
+
+    a {
+      text-decoration: none;
+      color: $invert-text-color;
+    }
+
+    > li {
+      padding: 1em;
+      background: lighten($main-color, 5);
+      border-top: 1px solid darken($main-color, 5);
+      position: relative;
+
+      &:last-child{
+        border-bottom: 1px solid darken($main-color, 5);
+      }
+
+      &.x-small, &.x-has-image {
+        display: none;
+      }
+
+      &.x-has-sub-menu {
+        .x-next {
+          transition: 300ms;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          position: absolute;
+          width: 45px;
+          padding-left: 5px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 20px;
+          background: darken($main-color,1);
+          cursor: pointer;
+          &:hover{
+            background: lighten($main-color,1);
+          }
+
+
+          a{
+            display: block;
+          }
+        }
+        &.x-right{
+          .x-next {
+            right: auto;
+            left: 0;
+          }
+        }
+      }
+
+      &.x-right{
+
+      }
+
+      ul {
+        display: none;
+      }
+    }
+  }
 }
 
 // responsive
@@ -147,15 +236,16 @@ $main-color: darkred;
     > li {
       display: none;
 
-      &:before{
+      &:before {
         display: none !important;
       }
 
-      &.x-has-image, &.x-always-show  {
+      &.x-has-image, &.x-always-show {
         display: block;
         grid-column: span 6;
       }
-      &.x-small{
+
+      &.x-small {
         grid-column: span 1;
       }
     }
