@@ -208,10 +208,8 @@ let xMegaMenu = (seletor, options =
         multiLevelMenu.querySelectorAll('li').forEach(function (li) {
             if (li.querySelectorAll(':scope h3').length === 0){
                 li.classList.add('x-list');
-                console.log('y',li);
-            }else {
-                console.log('n',li);
             }
+
             // remove not wanted element
             if (li.classList.contains('x-highlight') || li.querySelectorAll(':scope > img').length > 0) {
                 li.remove();

@@ -1,15 +1,4 @@
 @charset "UTF-8";
-* {
-  padding: 0;
-  margin: 0;
-  border-spacing: 0;
-  text-decoration: none;
-  list-style: none;
-}
-
-body {
-  overflow-x: hidden;
-}
 
 .x-mega-menu {
   background: #efefef;

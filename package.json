@@ -4,7 +4,7 @@
   "description": "vanilla javascript mega menu easy use",
   "main": "index.js",
   "scripts": {
-    "scss": "node-sass --watch src -o dist"
+    "scss": "node-sass --watch src/x-mega-menu.scss -o dist"
   },
   "repository": {
     "type": "git",
