@@ -89,20 +89,23 @@ body {
 }
 .x-sub-menu h3 {
   border-bottom: 1px solid #eee;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   color: #777;
   transition: 333ms;
 }
 .x-sub-menu h3:hover {
   color: #111111;
 }
-.x-sub-menu a {
-  padding: 1em;
-  color: black;
+.x-sub-menu li {
+  padding: 5.5px;
+}
+.x-sub-menu li a {
+  padding: 1.2em;
+  color: gray;
   transition: 333ms;
 }
-.x-sub-menu a:hover {
-  color: #777;
+.x-sub-menu li a:hover {
+  color: dimgray;
 }
 .x-sub-menu.x-active {
   transform: scaleY(1) translateY(0);
