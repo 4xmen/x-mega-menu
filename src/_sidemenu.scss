@@ -24,7 +24,11 @@
   h2, h3, h4, h5 {
     padding: .75em;
     text-align: center;
-    background: lighten($main-color, 3);
+    @if $is-dark == 'true' {
+      background: lighten($main-menu-bg, 3);
+    } @else{
+      background: lighten($main-color, 3);
+    }
     font-size: 18px;
   }
 
@@ -32,22 +36,42 @@
     z-index: 9;
     user-select: none;
     box-shadow: -1px 0 7px #111, 1px 0 7px #111;
-    background: $main-color;
+    @if $is-dark == 'true' {
+      background: $main-menu-bg;
+    } @else {
+      background: $main-color;
+    }
+
+
     width: 300px;
     overflow-y: auto;
-    color: $invert-text-color;
+    @if $is-dark == 'true' {
+      color: lighten($invert-text-color,10);
+    } @else{
+      color: $invert-text-color;
+    }
     height: 100vh;
     box-sizing: border-box;
     position: relative;
 
     > li {
-      background: lighten($main-color, 5);
-      border-top: 1px solid darken($main-color, 5);
+      @if $is-dark == 'true' {
+        background: $main-menu-bg;
+        background: lighten($main-menu-bg, 5);
+        border-top: 1px solid darken($main-menu-bg, 5);
+      } @else {
+        background: lighten($main-color, 5);
+        border-top: 1px solid darken($main-color, 5);
+      }
       position: relative;
       color: gray;
 
       &:last-child {
+        @if $is-dark == 'true' {
+          border-bottom: 1px solid darken($main-menu-bg, 5);
+        } @else{
         border-bottom: 1px solid darken($main-color, 5);
+        }
       }
 
       &.x-small, &.x-has-image {
@@ -62,7 +86,11 @@
       a, span {
         display: block;
         padding: 1em;
-        color: $invert-text-color;
+        @if $is-dark == 'true' {
+          color: lighten($invert-text-color,10);
+        } @else{
+          color: $invert-text-color;
+        }
         text-decoration: none;
       }
     }
@@ -72,14 +100,17 @@
       padding: 10px .46em;
       font-size: 30px;
       cursor: pointer;
-      background: darken($main-color, 4);
+      @if $is-dark == 'true' {
+        background: darken($main-menu-bg, 4);
+      } @else{
+        background: darken($main-color, 4);
+      }
     }
   }
 
 
   .x-has-sub-menu {
     .x-next {
-      border: 1px solid darken($main-color, 5);
       border-bottom: 0;
       border-top: 0;
       transition: 300ms;
@@ -93,12 +124,26 @@
       align-items: center;
       justify-content: center;
       font-size: 20px;
-      background: darken($main-color, 1);
+      @if $is-dark == 'true' {
+        background: darken($main-menu-bg, 1);
+        border: 1px solid darken($main-menu-bg, 5);
+      } @else{
+        border: 1px solid darken($main-color, 5);
+        background: darken($main-color, 3);
+      }
       cursor: pointer;
-      color: $invert-text-color;
+      @if $is-dark == 'true' {
+        color: lighten($invert-text-color,10);
+      } @else{
+        color: $invert-text-color;
+      }
 
       &:hover {
-        background: lighten($main-color, 1);
+        @if $is-dark == 'true' {
+          background: lighten($main-menu-bg, 1);
+        } @else{
+          background: lighten($main-color, 1);
+        }
       }
 
 
@@ -157,7 +202,11 @@
   position: absolute;
   top: 0;
   width: 290px;
-  background: $main-color;
+  @if $is-dark == 'true' {
+    background: $main-menu-bg;
+  } @else {
+    background: $main-color;
+  }
   height: 100vh;
   box-shadow: -1px 0 7px #111, 1px 0 7px #111;
   overflow-y: auto;
@@ -170,8 +219,14 @@
   }
 
   li.x-list {
-    background: lighten($main-color, 5);
-    border-top: 1px solid darken($main-color, 5);
+    @if $is-dark == 'true' {
+      background: lighten($main-menu-bg, 5);
+      border-top: 1px solid darken($main-menu-bg, 5);
+    } @else {
+      background: lighten($main-color, 5);
+      border-top: 1px solid darken($main-color, 5);
+      background: $main-color;
+    }
     position: relative;
 
     ul {
@@ -181,7 +236,11 @@
     a, span {
       display: block;
       padding: 1em;
-      color: $invert-text-color;
+      @if $is-dark == 'true' {
+        color: lighten($invert-text-color,10);
+      } @else{
+        color: $invert-text-color;
+      }
       text-decoration: none;
     }
   }
@@ -189,7 +248,11 @@
   .x-back {
     padding: .75em;
     text-align: center;
-    border-bottom: 1px solid darken($main-color, 4);
+    @if $is-dark == 'true' {
+      border-bottom: 1px solid darken($main-menu-bg, 4);
+    } @else{
+      border-bottom: 1px solid darken($main-color, 4);
+    }
     cursor: pointer;
 
     .x-back-btn {

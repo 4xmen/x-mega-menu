@@ -190,14 +190,14 @@ let xMegaMenu = (seletor, options =
             li.classList.add('x-has-image');
         }
 
-        li.addEventListener('mouseenter',  () => {
+        li.addEventListener('mouseenter',  (e) => {
             // check has mega menu to show
-            if (this.querySelectorAll('ul').length !== 0) {
+            if (e.target.querySelectorAll('ul').length !== 0) {
                 // find mega menu content
-                subMenu.innerHTML = this.querySelector('ul').outerHTML;
+                subMenu.innerHTML = e.target.querySelector('ul').outerHTML;
                 // reset active class
                 remActiveClassMenu();
-                this.classList.add('x-active');
+                e.target.classList.add('x-active');
                 // mark main sections
                 subMenu.querySelectorAll(':scope > ul > li').forEach( (mainLi) => {
                     mainLi.classList.add('x-main-section-menu');
@@ -312,9 +312,9 @@ let xMegaMenu = (seletor, options =
         // find content and add
         multiLevelMenu.innerHTML = e.target.parentNode.querySelector('ul').outerHTML;
         // append created menu to main
-        this.parentNode.closest('.x-side-menu').append(multiLevelMenu);
+        e.target.parentNode.closest('.x-side-menu').append(multiLevelMenu);
         // fnd back text
-        let txt = findElementMainText(this.parentNode);
+        let txt = findElementMainText(e.target.parentNode);
         // add back button
         let back = document.createElement('div');
         back.classList.add('x-back');
@@ -353,19 +353,19 @@ let xMegaMenu = (seletor, options =
 
 
     liveListener('click', '.x-back', (e) => {
-        this.parentNode.closest('.x-multi-level-menu').remove();
+        e.target.parentNode.closest('.x-multi-level-menu').remove();
     });
 
 
     liveListener('click', '.x-back-btn.x-desktop', (e) => {
-        this.parentNode.closest('.x-multi-level-menu-desktop').remove();
+        e.target.parentNode.closest('.x-multi-level-menu-desktop').remove();
     });
 
     liveListener('click', '.x-has-sub-menu.x-desktop', (e) => {
         if (xOptions.disableLinks) {
             e.preventDefault();
         }
-        showMultiLevelMenu(this);
+        showMultiLevelMenu(e.target);
     });
 
 

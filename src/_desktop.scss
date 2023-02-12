@@ -1,6 +1,6 @@
 
 .x-mega-menu {
-  background: #efefef;
+  background: $main-menu-bg;
   display: grid;
   grid-auto-columns: minmax(0, 1fr);
   grid-auto-flow: column;
