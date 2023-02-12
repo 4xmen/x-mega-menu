@@ -21,6 +21,11 @@ let xMegaMenu = (seletor, options =
     };
 
 
+    // default global variable
+    let timeoutShowSubMenu = null;
+    let isDebug = false;
+
+    // apply options
     for (const index in options) {
         if (options[index] !== '') {
             xOptions[index] = options[index];
@@ -40,10 +45,12 @@ let xMegaMenu = (seletor, options =
         }
     }
 
+    // show side menu for responsive (mobile) mode
     let showSideMenu = () => {
         sideMenu.classList.add('x-active');
+        // add blur effect if active
         if (xOptions.blurEffect) {
-            document.querySelectorAll('body > *').forEach(function (el) {
+            document.querySelectorAll('body > *').forEach((el) => {
                 if (el.querySelectorAll('.x-mega-menu').length === 0) {
                     el.classList.add('x-blur');
                 }
@@ -52,29 +59,81 @@ let xMegaMenu = (seletor, options =
         }
     };
 
+    // hide side menu for responsive (mobile) mode
     let hideSideMenu = () => {
         sideMenu.classList.remove('x-active');
+        // remove blur effect if active
         if (xOptions.blurEffect) {
-            document.querySelectorAll('.x-blur').forEach(function (el) {
+            document.querySelectorAll('.x-blur').forEach((el) => {
                 el.classList.remove('x-blur');
             });
             // reset submenus
             if (xOptions.resetMenu) {
-                document.querySelectorAll('.x-multi-level-menu').forEach(function (lvlMenu) {
+                document.querySelectorAll('.x-multi-level-menu').forEach( (lvlMenu) =>{
                     lvlMenu.remove();
                 });
             }
         }
     };
 
+    // show multi level menu just for desktop mode
+    let showMultiLevelMenu = (el) => {
+        // find sub menu section parent
+        let parent = el.parentNode.closest('.x-main-section-menu');
+        // create new ul
+        let newUl = document.createElement('ul');
+        // add back button with last level text
+        newUl.innerHTML = '<li class="x-back-btn x-desktop"><span>〈 &nbsp; &nbsp; ' + findElementMainText(el) + '</span></li>';
+        // append sub menu content
+        newUl.innerHTML += el.querySelector('ul').innerHTML;
+        // create div parent and append to main section
+        let mainDiv = document.createElement('div');
+        mainDiv.classList.add('x-multi-level-menu-desktop');
+        mainDiv.append(newUl);
+        parent.append(mainDiv);
+        // update event
+        setTimeout(() => {
+            updateEventForMultiLevel();
+        }, 500);
+    };
+
+    // update event for multi menu
+    // cuz mouseenter and mouseleave don't work on document live
+    let updateEventForMultiLevel = () => {
+        if (!xOptions.disableLinks) {
+            document.querySelectorAll('.x-has-sub-menu.x-desktop').forEach((li) => {
+                // show menu
+                function showMenu() {
+                    // reset timeout
+                    clearTimeout(timeoutShowSubMenu);
+                    // create delay for show sub menu
+                    timeoutShowSubMenu = setTimeout(() => {
+                        showMultiLevelMenu(li);
+                    }, 1000);
+                }
+
+                function dontShowMenu() {
+                    // cancel show submenu when
+                    clearTimeout(timeoutShowSubMenu);
+                }
+
+                // reset and set events
+                li.removeEventListener('mouseenter', showMenu);
+                li.removeEventListener('mouseenter', dontShowMenu);
+                li.addEventListener('mouseenter', showMenu);
+                li.addEventListener('mouseleave', dontShowMenu);
+            });
+        }
+    };
+
+    // live event listener
     let liveListener = (eventType, elementQuerySelector, cb) => {
-        document.addEventListener(eventType, function (event) {
+        document.addEventListener(eventType, (event) => {
             let qs = document.querySelectorAll(elementQuerySelector);
 
             if (qs) {
                 let el = event.target, index = -1;
                 while (el && ((index = Array.prototype.indexOf.call(qs, el)) === -1)) {
-                    // console.log(el,el.parentElement);
                     el = el.parentElement;
                 }
                 if (index > -1) {
@@ -84,6 +143,7 @@ let xMegaMenu = (seletor, options =
         });
     };
 
+    // find text content with default value
     let findElementMainText = (el, def = '') => {
         let txt = def;
         if (el.childNodes[0].nodeValue.trim().length > 0) {
@@ -94,8 +154,9 @@ let xMegaMenu = (seletor, options =
         return txt;
     }
 
-    let remActiveClassMenu = () =>{
-        xMenu.querySelectorAll('li.x-active').forEach(function (li) {
+    // remove last active class for main menu li
+    let remActiveClassMenu = () => {
+        xMenu.querySelectorAll('li.x-active').forEach( (li) => {
             li.classList.remove('x-active');
         });
     }
@@ -105,36 +166,45 @@ let xMegaMenu = (seletor, options =
     // add x mega menu class
     xMenu.classList.add('x-mega-menu');
 
+    // inject toggle button
     xMenu.innerHTML = `<li id="x-toggle">
             ${xOptions.barsIcon}
         </li>`
         + xMenu.innerHTML;
 
-    // add x-border to parent
+    // inject sub menu for show mega menu by content
     let subMenu = document.createElement("div");
     subMenu.classList.add('x-sub-menu');
     xMenu.parentNode.appendChild(subMenu);
 
 
     // x mega menu child event
-    xMenu.querySelectorAll(':scope > li').forEach(function (li) {
+    xMenu.querySelectorAll(':scope > li').forEach( (li) =>{
 
+        // find has submenu and add class
         if (li.querySelectorAll('ul').length > 0) {
             li.classList.add('x-has-sub-menu');
         }
+        // ignore padding for logo and images in menu to show bigger image in menu
         if (li.querySelectorAll(':scope > img, :scope > a > img').length > 0) {
             li.classList.add('x-has-image');
         }
-        li.addEventListener('mouseenter', function () {
+
+        li.addEventListener('mouseenter',  () => {
+            // check has mega menu to show
             if (this.querySelectorAll('ul').length !== 0) {
+                // find mega menu content
                 subMenu.innerHTML = this.querySelector('ul').outerHTML;
+                // reset active class
                 remActiveClassMenu();
                 this.classList.add('x-active');
-                subMenu.querySelectorAll(':scope > ul > li').forEach(function (mainLi) {
-                    mainLi.classList.add('x-main-sub-menu');
+                // mark main sections
+                subMenu.querySelectorAll(':scope > ul > li').forEach( (mainLi) => {
+                    mainLi.classList.add('x-main-section-menu');
                 });
 
-                subMenu.querySelectorAll('li li').forEach(function (li2) {
+                // mark has sub menus li
+                subMenu.querySelectorAll('li li').forEach( (li2) => {
                     if (li2.querySelectorAll('ul').length > 0) {
                         li2.classList.add('x-has-sub-menu');
                         li2.classList.add('x-desktop');
@@ -143,19 +213,22 @@ let xMegaMenu = (seletor, options =
                         }
                     }
                 });
+                updateEventForMultiLevel();
                 subMenu.classList.add('x-active');
+                // check blur effect to active
                 if (xOptions.blurEffect) {
-                    document.querySelectorAll('body > *').forEach(function (el) {
+                    document.querySelectorAll('body > *').forEach( (el) => {
                         if (el.querySelectorAll('.x-mega-menu').length === 0) {
                             el.classList.add('x-blur');
                         }
                     });
                 }
             } else {
+                // hide sub menu
                 subMenu.innerHTML = '';
                 remActiveClassMenu();
                 if (xOptions.blurEffect) {
-                    document.querySelectorAll('.x-blur').forEach(function (el) {
+                    document.querySelectorAll('.x-blur').forEach( (el) => {
                         el.classList.remove('x-blur');
                     });
                 }
@@ -163,29 +236,31 @@ let xMegaMenu = (seletor, options =
         });
     });
 
-    // fix not links
-    xMenu.querySelectorAll('li').forEach(function (li) {
+    // fix not links for padding that full block a
+    xMenu.querySelectorAll('li').forEach((li) => {
         try {
             let txt = li.childNodes[0].nodeValue.trim();
-            if (txt.length > 0){
+            if (txt.length > 0) {
                 li.innerHTML = li.innerHTML.split(txt).join(`<span>${txt}</span>`);
             }
         } catch {
         }
-
     });
-    xMenu.parentNode.addEventListener('mouseleave', function () {
-        subMenu.innerHTML = '';
-        remActiveClassMenu();
-        if (xOptions.blurEffect && window.innerWidth > xOptions.responseWidth) {
-            document.querySelectorAll('.x-blur').forEach(function (el) {
-                el.classList.remove('x-blur');
-            });
+    // hide menu when mouse leave menu
+    xMenu.parentNode.addEventListener('mouseleave', () => {
+        if (!isDebug) {
+            subMenu.innerHTML = '';
+            remActiveClassMenu();
+            if (xOptions.blurEffect && window.innerWidth > xOptions.responseWidth) {
+                document.querySelectorAll('.x-blur').forEach( (el) => {
+                    el.classList.remove('x-blur');
+                });
+            }
         }
     });
 
 
-    // side menu
+    // inject side menu
     let sideMenu = document.createElement("div");
     sideMenu.setAttribute('id', 'x-side-menu');
     xMenu.parentNode.appendChild(sideMenu);
@@ -201,10 +276,12 @@ let xMegaMenu = (seletor, options =
 </ul>`;
 
     // add next level sub menu
-    sideMenu.querySelectorAll('.x-has-sub-menu').forEach(function (li) {
+    sideMenu.querySelectorAll('.x-has-sub-menu').forEach((li) => {
+        // fix rtl
         if (xOptions.isRtl) {
             li.classList.add('x-right');
         }
+        // add next button
         li.innerHTML += `
         <div class="x-next"> 
             〉
@@ -213,21 +290,21 @@ let xMegaMenu = (seletor, options =
     });
 
     // remove not need elements
-    sideMenu.querySelectorAll('.x-always-show,.x-has-image').forEach(function (li) {
+    sideMenu.querySelectorAll('.x-always-show,.x-has-image').forEach((li) => {
         li.remove();
     });
 
 
-    document.querySelector('#x-toggle').addEventListener('click', function () {
+    document.querySelector('#x-toggle').addEventListener('click', () => {
         showSideMenu();
     });
-    document.querySelector('.x-close').addEventListener('click', function () {
+    document.querySelector('.x-close').addEventListener('click', () => {
         hideSideMenu();
     });
 
 
     // generate next level
-    liveListener('click', '.x-next', function (e) {
+    liveListener('click', '.x-next', (e) => {
 
         // create multi level div
         let multiLevelMenu = document.createElement("div");
@@ -245,7 +322,7 @@ let xMegaMenu = (seletor, options =
         multiLevelMenu.prepend(back);
 
         // each sub items to optimize
-        multiLevelMenu.querySelectorAll('li').forEach(function (li) {
+        multiLevelMenu.querySelectorAll('li').forEach((li) => {
             if (li.querySelectorAll('ul').length > 0) {
                 li.classList.add('x-has-sub-menu');
             }
@@ -260,7 +337,7 @@ let xMegaMenu = (seletor, options =
 
         });
         // add next level items
-        multiLevelMenu.querySelectorAll('.x-list').forEach(function (li2) {
+        multiLevelMenu.querySelectorAll('.x-list').forEach( (li2) =>{
             if (li2.querySelectorAll('ul').length > 0) {
                 if (xOptions.isRtl) {
                     li2.classList.add('x-right');
@@ -275,33 +352,24 @@ let xMegaMenu = (seletor, options =
     });
 
 
-    liveListener('click', '.x-back', function (e) {
+    liveListener('click', '.x-back', (e) => {
         this.parentNode.closest('.x-multi-level-menu').remove();
     });
 
-    liveListener('mouseleave', '.x-mega-menu > li.x-active', function (e) {
-        remActiveClassMenu();
-    });
 
-    liveListener('click', '.x-back-btn.x-desktop', function (e) {
+    liveListener('click', '.x-back-btn.x-desktop', (e) => {
         this.parentNode.closest('.x-multi-level-menu-desktop').remove();
     });
 
-    liveListener('click','.x-has-sub-menu.x-desktop',function (e) {
-        if (xOptions.disableLinks){
+    liveListener('click', '.x-has-sub-menu.x-desktop', (e) => {
+        if (xOptions.disableLinks) {
             e.preventDefault();
         }
-        let parent = this.parentNode.closest('.x-main-sub-menu');
-        let newUl = document.createElement('ul');
-        newUl.innerHTML = '<li class="x-back-btn x-desktop"><span>〈 &nbsp; &nbsp; '+findElementMainText(this)+'</span></li>';
-        newUl.innerHTML += this.querySelector('ul').innerHTML;
-        let mainDiv = document.createElement('div');
-        mainDiv.classList.add('x-multi-level-menu-desktop');
-        mainDiv.append(newUl);
-        parent.append(mainDiv);
+        showMultiLevelMenu(this);
     });
 
-    sideMenu.addEventListener('click', function (e) {
+
+    sideMenu.addEventListener('click', (e) => {
         if (e.target.getAttribute('id') === 'x-side-menu') {
             hideSideMenu();
         }

@@ -119,9 +119,9 @@
       width: 80%;
       display: block;
       margin: 1em auto; }
-  .x-sub-menu .x-main-sub-menu {
+  .x-sub-menu .x-main-section-menu {
     position: relative; }
-    .x-sub-menu .x-main-sub-menu .x-multi-level-menu-desktop {
+    .x-sub-menu .x-main-section-menu .x-multi-level-menu-desktop {
       position: absolute;
       left: 15px;
       right: 15px;
