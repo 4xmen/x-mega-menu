@@ -8,7 +8,7 @@ npm i x-mega-menu
 ````
 or
 ````
-x-mega-menu
+yarn add x-mega-menu
 ````
 or use dist file of repo.
 
@@ -181,11 +181,11 @@ HTML:
 javascript use:
 ```javascript
 xMegaMenu('#mega-menu', {
-    responseWidth: 1000,
+    responseWidth: 1124,
     isRtl: true,
     mainTitle: '🖤 xStack menu 🖤',
     blurEffect: true,
-    disableLinks: false,
+    disableLinks: true,
 });
 ```
 ## DEMO (example)

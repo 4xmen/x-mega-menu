@@ -365,7 +365,11 @@ let xMegaMenu = (seletor, options =
         if (xOptions.disableLinks) {
             e.preventDefault();
         }
-        showMultiLevelMenu(e.target);
+        if (e.target.tagName === 'li'){
+            showMultiLevelMenu(e.target);
+        }else{
+            showMultiLevelMenu(e.target.parentNode.closest('li.x-has-sub-menu'));
+        }
     });
 
 

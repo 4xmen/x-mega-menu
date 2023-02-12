@@ -207,6 +207,11 @@
       top: 0;
       bottom: 0;
       background: $main-menu-bg;
+
+      .x-back-btn{
+        cursor: pointer;
+      }
+
     }
   }
 
