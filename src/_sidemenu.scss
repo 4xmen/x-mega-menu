@@ -21,10 +21,11 @@
     width: 100%;
   }
 
-  h3 {
-    font-size: 25px;
-    padding: 1em;
+  h2, h3, h4, h5 {
+    padding: .75em;
     text-align: center;
+    background: lighten($main-color, 3);
+    font-size: 18px;
   }
 
   .x-side-menu {
@@ -40,7 +41,6 @@
     position: relative;
 
     > li {
-      padding: 1em;
       background: lighten($main-color, 5);
       border-top: 1px solid darken($main-color, 5);
       position: relative;
@@ -54,61 +54,73 @@
         display: none;
       }
 
-      &.x-has-sub-menu {
-        .x-next {
-          border: 1px solid darken($main-color, 5);
-          border-bottom: 0;
-          border-top: 0;
-          transition: 300ms;
-          right: 0;
-          top: 0;
-          bottom: 0;
-          position: absolute;
-          width: 45px;
-          padding-left: 5px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 20px;
-          background: darken($main-color, 1);
-          cursor: pointer;
-
-          &:hover {
-            background: lighten($main-color, 1);
-          }
-
-
-          a {
-            display: block;
-            padding-top: 15px;
-          }
-        }
-
-        &.x-right {
-          .x-next {
-            right: auto;
-            left: 0;
-          }
-        }
-      }
-
-      &.x-right {
-
-      }
 
       ul {
         display: none;
+      }
+
+      a, span {
+        display: block;
+        padding: 1em;
+        color: $invert-text-color;
+        text-decoration: none;
       }
     }
 
     .x-close {
       float: right;
       padding: 10px .46em;
-      font-size: 35px;
+      font-size: 30px;
       cursor: pointer;
       background: darken($main-color, 4);
     }
   }
+
+
+  .x-has-sub-menu {
+    .x-next {
+      border: 1px solid darken($main-color, 5);
+      border-bottom: 0;
+      border-top: 0;
+      transition: 300ms;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      position: absolute;
+      width: 45px;
+      padding-left: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      background: darken($main-color, 1);
+      cursor: pointer;
+      color: $invert-text-color;
+
+      &:hover {
+        background: lighten($main-color, 1);
+      }
+
+
+      a {
+        display: block;
+        padding-top: 15px;
+      }
+    }
+
+    &.x-right {
+      .x-next {
+        right: auto;
+        left: 0;
+      }
+    }
+  }
+
+  .x-right {
+
+  }
+
+
 }
 
 // responsive
@@ -150,55 +162,14 @@
   box-shadow: -1px 0 7px #111, 1px 0 7px #111;
   overflow-y: auto;
 
-  h2, h3, h4, h5 {
-    padding: .5em .7em !important;
-    text-align: center;
-    background: lighten($main-color, 3);
-  }
-
   li {
     padding: 0;
     list-style: none;
 
-    .x-next {
-      border: 1px solid darken($main-color, 5);
-      border-bottom: 0;
-      border-top: 0;
-      transition: 300ms;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      position: absolute;
-      width: 45px;
-      padding-left: 5px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-      background: darken($main-color, 1);
-      cursor: pointer;
-
-      &:hover {
-        background: lighten($main-color, 1);
-      }
-
-
-      a {
-        display: block;
-      }
-    }
-
-    &.x-right {
-      .x-next {
-        right: auto;
-        left: 0;
-      }
-    }
 
   }
 
   li.x-list {
-    padding: 1em;
     background: lighten($main-color, 5);
     border-top: 1px solid darken($main-color, 5);
     position: relative;
@@ -206,12 +177,20 @@
     ul {
       display: none;
     }
+
+    a, span {
+      display: block;
+      padding: 1em;
+      color: $invert-text-color;
+      text-decoration: none;
+    }
   }
 
   .x-back {
     padding: .75em;
     text-align: center;
     border-bottom: 1px solid darken($main-color, 4);
+    cursor: pointer;
 
     .x-back-btn {
       float: right;
@@ -219,7 +198,9 @@
       font-size: 20px;
       cursor: pointer;
       margin: -.75em;
-      background: darken($main-color, 4);
+      text-align: left;
+      width: 15px;
+      //background: darken($main-color, 4);
     }
   }
 }
