@@ -1,0 +1,276 @@
+
+#x-toggle {
+  display: none;
+}
+
+// side menu for responsive
+#x-side-menu {
+  transition: 500ms;
+  transition-timing-function: linear;
+  width: 0;
+  overflow: hidden;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 999999;
+
+
+  &.x-active {
+    width: 100%;
+  }
+
+  h2, h3, h4, h5 {
+    padding: .75em;
+    text-align: center;
+    @if $is-dark == 'true' {
+      background: lighten($main-menu-bg, 3);
+    } @else{
+      background: lighten($main-color, 3);
+    }
+    font-size: 18px;
+  }
+
+  .x-side-menu {
+    z-index: 9;
+    user-select: none;
+    box-shadow: -1px 0 7px #111, 1px 0 7px #111;
+    @if $is-dark == 'true' {
+      background: $main-menu-bg;
+    } @else {
+      background: $main-color;
+    }
+
+
+    width: 300px;
+    overflow-y: auto;
+    @if $is-dark == 'true' {
+      color: lighten($invert-text-color,10);
+    } @else{
+      color: $invert-text-color;
+    }
+    height: 100vh;
+    box-sizing: border-box;
+    position: relative;
+
+    > li {
+      @if $is-dark == 'true' {
+        background: $main-menu-bg;
+        background: lighten($main-menu-bg, 5);
+        border-top: 1px solid darken($main-menu-bg, 5);
+      } @else {
+        background: lighten($main-color, 5);
+        border-top: 1px solid darken($main-color, 5);
+      }
+      position: relative;
+      color: gray;
+
+      &:last-child {
+        @if $is-dark == 'true' {
+          border-bottom: 1px solid darken($main-menu-bg, 5);
+        } @else{
+        border-bottom: 1px solid darken($main-color, 5);
+        }
+      }
+
+      &.x-small, &.x-has-image {
+        display: none;
+      }
+
+
+      ul {
+        display: none;
+      }
+
+      a, span {
+        display: block;
+        padding: 1em;
+        @if $is-dark == 'true' {
+          color: lighten($invert-text-color,10);
+        } @else{
+          color: $invert-text-color;
+        }
+        text-decoration: none;
+      }
+    }
+
+    .x-close {
+      float: right;
+      padding: 10px .46em;
+      font-size: 30px;
+      cursor: pointer;
+      @if $is-dark == 'true' {
+        background: darken($main-menu-bg, 4);
+      } @else{
+        background: darken($main-color, 4);
+      }
+    }
+  }
+
+
+  .x-has-sub-menu {
+    .x-next {
+      border-bottom: 0;
+      border-top: 0;
+      transition: 300ms;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      position: absolute;
+      width: 45px;
+      padding-left: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      @if $is-dark == 'true' {
+        background: darken($main-menu-bg, 1);
+        border: 1px solid darken($main-menu-bg, 5);
+      } @else{
+        border: 1px solid darken($main-color, 5);
+        background: darken($main-color, 3);
+      }
+      cursor: pointer;
+      @if $is-dark == 'true' {
+        color: lighten($invert-text-color,10);
+      } @else{
+        color: $invert-text-color;
+      }
+
+      &:hover {
+        @if $is-dark == 'true' {
+          background: lighten($main-menu-bg, 1);
+        } @else{
+          background: lighten($main-color, 1);
+        }
+      }
+
+
+      a {
+        display: block;
+        padding-top: 15px;
+      }
+    }
+
+    &.x-right {
+      .x-next {
+        right: auto;
+        left: 0;
+      }
+    }
+  }
+
+  .x-right {
+
+  }
+
+
+}
+
+// responsive
+.x-responsive {
+  #x-toggle {
+    display: block;
+    grid-column: span 1;
+
+  }
+
+  &.x-mega-menu {
+    grid-auto-columns: 1fr;
+
+    > li {
+      display: none;
+
+      &:before {
+        display: none !important;
+      }
+
+      &.x-has-image, &.x-always-show {
+        display: block;
+        grid-column: span 6;
+      }
+
+      &.x-small {
+        grid-column: span 1;
+      }
+    }
+  }
+}
+
+.x-multi-level-menu {
+  position: absolute;
+  top: 0;
+  width: 290px;
+  @if $is-dark == 'true' {
+    background: $main-menu-bg;
+  } @else {
+    background: $main-color;
+  }
+  height: 100vh;
+  box-shadow: -1px 0 7px #111, 1px 0 7px #111;
+  overflow-y: auto;
+
+  li {
+    padding: 0;
+    list-style: none;
+
+
+  }
+
+  li.x-list {
+    @if $is-dark == 'true' {
+      background: lighten($main-menu-bg, 5);
+      border-top: 1px solid darken($main-menu-bg, 5);
+    } @else {
+      background: lighten($main-color, 5);
+      border-top: 1px solid darken($main-color, 5);
+      background: $main-color;
+    }
+    position: relative;
+
+    ul {
+      display: none;
+    }
+
+    a, span {
+      display: block;
+      padding: 1em;
+      @if $is-dark == 'true' {
+        color: lighten($invert-text-color,10);
+      } @else{
+        color: $invert-text-color;
+      }
+      text-decoration: none;
+    }
+  }
+
+  .x-back {
+    padding: .75em;
+    text-align: center;
+    @if $is-dark == 'true' {
+      border-bottom: 1px solid darken($main-menu-bg, 4);
+    } @else{
+      border-bottom: 1px solid darken($main-color, 4);
+    }
+    cursor: pointer;
+
+    .x-back-btn {
+      float: right;
+      padding: 10px .46em;
+      font-size: 20px;
+      cursor: pointer;
+      margin: -.75em;
+      text-align: left;
+      width: 15px;
+      //background: darken($main-color, 4);
+    }
+  }
+}
+
+.x-blur {
+  filter: blur(5px) grayscale(.75);
+  user-select: none;
+  transition: 100ms;
+  transition-delay: 100ms;
+}

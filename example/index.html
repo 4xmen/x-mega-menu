@@ -1,44 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>x-mega-menu example </title>
+    <link rel="stylesheet" href="../dist/x-mega-menu.css">
+    <script src="../src/x-mega-menu.js"></script>
+    <!-- demo css -->
+    <style>
 
-<h1 align="center">
-  <br>
-  <a href="https://anubias.app/">
-    <img src="example/img/openlogo-nd.svg" alt="X-MEGA_MENU" width="150">
-  </a>
-  <br>
-  <a href="https://anubias.app">X Mega Menu</a>
-  <br>
-  <hr>
-</h1>
+        * {
+            padding: 0;
+            margin: 0;
+            border-spacing: 0;
+            text-decoration: none;
+            list-style: none;
+        }
 
+        body {
+            overflow-x: hidden;
+        }
 
-# X-Mega-Menu
+        .demo {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            text-align: center;
+        }
 
-x mega menu is easy usable multi level responsive with vanillaJS (ltr and rtl support).
-
-## How use it?
-With package manager:
-````
-npm i x-mega-menu
-````
-or
-````
-yarn add x-mega-menu
-````
-or use dist file of repo.
-
-add assets:
-```html
-   <link rel="stylesheet" href="../dist/x-mega-menu.css">
-   <script src="../dist/x-mega-menu.js"></script>
-```
-
-HTML:
-```html
+        .demo img {
+            max-width: 90%;
+        }
+    </style>
+</head>
+<body dir="rtl">
 <nav>
     <ul id="mega-menu">
         <li>
             <a href="#">
-                <img src="https://assets.ubuntu.com/v1/ff6a9a38-ubuntu-logo-2022.svg" alt="">
+                <img src="img/openlogo-nd.svg" alt="">
             </a>
         </li>
         <li>
@@ -103,7 +104,7 @@ HTML:
                     <h3>
                         sub item 3
                     </h3>
-                    <img src="https://assets.ubuntu.com/v1/ff6a9a38-ubuntu-logo-2022.svg" alt="">
+                    <img src="img/openlogo-nd.svg" alt="">
                 </li>
                 <li class="x-highlight">
                     <h3>
@@ -139,7 +140,7 @@ HTML:
                     <h3>
                         sub item 3
                     </h3>
-                    <img src="https://assets.ubuntu.com/v1/ff6a9a38-ubuntu-logo-2022.svg" alt="">
+                    <img src="img/openlogo-nd.svg" alt="">
                 </li>
                 <li>
                     <h3>
@@ -191,105 +192,44 @@ HTML:
         </li>
     </ul>
 </nav>
-```
-javascript use:
-```javascript
-xMegaMenu('#mega-menu', {
-    responseWidth: 1124,
-    isRtl: true,
-    mainTitle: '🖤 xStack menu 🖤',
-    blurEffect: true,
-    disableLinks: true,
-});
-```
-
-# Demo
-
-<div align="center">
-<h2>Mega Menu Style</h2>
-<img src="example/img/mega-menu.png" width="600px">
+<p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquam aspernatur assumenda consequuntur
+    cupiditate deleniti, dolores earum eos est incidunt non numquam quaerat quas quibusdam quod rem similique tempore
+    velit!
+</p>
+<div class="demo">
+    <div>
+        <img src="https://www.gentoo.org/assets/img/logo/gentoo-horizontal.svg" alt="gento logo">
+    </div>
+    <div>
+        <img src="https://www.debian.org/logos/openlogo-nd-100.jpg" alt="debian logo">
+    </div>
+    <div>
+        <img src="https://assets.ubuntu.com/v1/ff6a9a38-ubuntu-logo-2022.svg" alt="">
+    </div>
 </div>
-<div align="center">
-<h2>Blue Theme</h2>
-<img src="example/img/screen-sidemenu-blue.png" width="450px">
-</div>
-<div align="center">
-<h2>Red Theme</h2>
-<img src="example/img/screen-sidemenu-red.png" width="450px">
-</div>
-<div align="center">
-<h2>Dark Theme</h2>
-<img src="example/img/screen-sidemenu-dark.png" width="450px">
-</div>
-
-## 🔗 Links
-https://www.npmjs.com/package/x-tree-select
-<br>
-http://4xmen.ir/
-<br>
-https://xstack.ir
-
-## DEMO (example)
-
-You can watch /example of project.
-
-## option and events
-
-
-| name  | default  |  action  |
-| ------------ | ------------ | ------------ |
-| responseWidth  |  `1024`  |  active mobile mode (side menu)  |
-| barsIcon |  -  |  any html element use for toggle bar   |
-| mainTitle  | `Navbar menu`  | change main menu title   |
-| isRtl  |  `false` |  change direction to rtl |
-|  blurEffect | `false`  |  blur effect when menu active |
-|  resetMenu | `true`  | reset side menu when close  |
-|  disableLinks | `true`  | disable links when has sub menu click event otherwise on mouse enter show sub level   |
-
-
-
-## Theme
-
-* Dark
-* Red
-* Blue
-
-## Report Some Bugs
-Find a Bug? Please, [create an issue](https://github.com/4xmen/x-mega-menu/issues) and we'll fix it together for a better template.
-
-## Contribution
-Contribution are always welcome and recommended! Here is how:
-
-- Fork the repository ([here is the guide](https://help.github.com/articles/fork-a-repo/)).
-- Clone to your machine git clone https://github.com/YOUR_USERNAME/Anubias-Desktop.git
-- Make your changes
-- Create a pull request
-
-## Badges
-
-<div align="center">
-
-[![X-Mega-Menu](https://img.shields.io/badge/Mega-Menu-red.svg)](https://anubias.app/)
-[![GitHub](https://img.shields.io/badge/Github-4xmen-blue.svg)](https://GitHub.com/4xmen)
-[![Xstack](https://img.shields.io/badge/Xstack-Team-red.svg)](https://xstack.ir)
-[![4xmen](https://img.shields.io/badge/4xmen-Team-black.svg)](https://4xmen.ir)
-[![Devefun](https://img.shields.io/badge/Devefun-Community-blue.svg)](https://Telegram.me/Devefun)
-
-</div>
-
-
-## License
-
-[![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/GNU)
-
-
-
-[GPL](https://www.gnu.org/licenses/gpl-3.0.en.html)
-
-
-## Support
-
-Star Repo If Like It ...
-
-<div align="center"> Developed With Love ! ❤️</div>
-
+<p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias architecto culpa cum harum libero omnis totam vel.
+    Ad architecto atque beatae consectetur, dolor ea eaque illo ipsa ipsum laboriosam laudantium obcaecati officiis
+    placeat praesentium temporibus voluptate voluptates? Ab alias aliquam animi at corporis cum debitis deleniti
+    dignissimos dolore doloribus eius esse eveniet expedita explicabo hic, id incidunt iste iusto libero magnam officiis
+    omnis porro provident quam quas quasi, quibusdam quod ratione repellendus sapiente similique sit sunt tempore
+    tenetur ullam voluptates voluptatibus? At blanditiis cum, earum esse facilis, id in ipsa ipsum iusto nobis nostrum
+    quasi quidem reiciendis sed voluptatem? Aliquid assumenda cumque, ea fuga, illum iste modi molestiae pariatur
+    perspiciatis porro quia sapiente similique, sunt tempora veniam. A corporis eius hic illo in, incidunt non
+    perspiciatis quisquam temporibus voluptas. Amet deserunt dignissimos doloribus eius incidunt, neque pariatur
+    quibusdam ratione recusandae repellendus reprehenderit rerum sunt suscipit, tempore ut vero voluptatibus!
+    Laboriosam.
+</p>
+<img src="img/wave.svg" width="100%" alt="" style="position: fixed;bottom: -20px;">
+<script>
+    xMegaMenu('#mega-menu', {
+        responseWidth: 1000,
+        isRtl: true,
+        mainTitle: '🖤 xStack menu 🖤',
+        blurEffect: true,
+        disableLinks: true,
+    });
+</script>
+</body>
+</html>
