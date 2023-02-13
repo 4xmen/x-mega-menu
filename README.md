@@ -206,19 +206,19 @@ xMegaMenu('#mega-menu', {
 
 <div align="center">
 <h2>Mega Menu Style</h2>
-<img src="img/mega-menu.png" width="600px">
+<img src="example/img/mega-menu.png" width="600px">
 </div>
 <div align="center">
 <h2>Blue Theme</h2>
-<img src="img/screen-sidemenu-blue.png" width="450px">
+<img src="example/img/screen-sidemenu-blue.png" width="450px">
 </div>
 <div align="center">
 <h2>Red Theme</h2>
-<img src="img/screen-sidemenu-red.png" width="450px">
+<img src="example/img/screen-sidemenu-red.png" width="450px">
 </div>
 <div align="center">
 <h2>Dark Theme</h2>
-<img src="img/screen-sidemenu-dark.png" width="450px">
+<img src="example/img/screen-sidemenu-dark.png" width="450px">
 </div>
 
 ## 🔗 Links
