@@ -1,7 +1,7 @@
 <h1 align="center">
   <br>
   <a href="https://anubias.app/">
-    <img src="img/openlogo-nd.svg" alt="Anubias" width="150">
+    <img src="img/openlogo-nd.svg" alt="X-MEGA_MENU" width="150">
   </a>
   <br>
   <a href="https://anubias.app">X Mega Menu</a>
