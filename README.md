@@ -229,7 +229,7 @@ http://4xmen.ir/
 https://xstack.ir
 
 
-## Responsive
+## Features
 
 
 | name  | default  |  action  |
