@@ -1,6 +1,6 @@
 {
   "name": "x-mega-menu",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "vanilla javascript mega menu easy use",
   "main": "index.js",
   "scripts": {
@@ -14,7 +14,8 @@
     "mega",
     "menu",
     "responsive",
-    "menu"
+    "menu",
+    "megamenu"
   ],
   "author": "4xmen",
   "license": "GPL-3.0-or-later",

@@ -229,6 +229,12 @@
         mainTitle: '🖤 xStack menu 🖤',
         blurEffect: true,
         disableLinks: true,
+        onCloseSideMenu: function () {
+            console.log('closed');
+        },
+        onOpenSideMenu: function () {
+            console.log('opened');
+        }
     });
 </script>
 </body>
