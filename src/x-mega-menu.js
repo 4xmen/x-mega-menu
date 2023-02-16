@@ -1,3 +1,24 @@
+/**
+ * x mega menu - repsonsive mega menu
+ *
+ * Copyright (C) 2017 4xmen team <a1gard@4xmen.ir>
+ *
+ * LICENSE: This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by the Free
+ * Software Foundation; either version 3 of the License, or (at your option) any
+ * later version.  This program is distributed in the hope that it will be
+ * useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General
+ * Public License for more details.  You should have received a copy of the GNU
+ * General Public License along with this program.
+ * If not, see <http://opensource.org/licenses/gpl-license.php>.
+ *
+ * @package    x-mega-menu
+ * @author     4xmen team  <www.4xmen.ir>
+ * @author     A1Gard <a1gard@4xmen.ir>
+ * @link       https://github.com/4xmen/x-mega-menu
+ */
+
 let xMegaMenu = (seletor, options =
     {
         responseWidth: '',

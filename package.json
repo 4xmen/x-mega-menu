@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/4xmen/x-mega-menu/issues"
   },
-  "homepage": "https://github.com/4xmen/x-mega-menu#readme"
+  "homepage": "https://github.com/4xmen/x-mega-menu#readme",
+  "devDependencies": {
+    "minify": "^9.2.0"
+  }
 }
