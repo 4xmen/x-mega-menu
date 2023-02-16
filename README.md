@@ -290,6 +290,20 @@ Contribution are always welcome and recommended! Here is how:
 
 [GPL](https://www.gnu.org/licenses/gpl-3.0.en.html)
 
+## Developing project
+
+Dependencies are `node-sass` and `minify`
+
+To render css:
+```shell
+npm run scss
+```
+
+To build:
+```shell
+npm run build
+```
+
 
 ## Support
 
