@@ -1,5 +1,19 @@
-# x-mege-menu
-x mega menu is easy usable multi level responsive with vanillaJS (ltr and rtl support)
+
+<h1 align="center">
+  <br>
+  <a href="https://anubias.app/">
+    <img src="example/img/openlogo-nd.svg" alt="X-MEGA_MENU" width="150">
+  </a>
+  <br>
+  <a href="https://anubias.app">X Mega Menu</a>
+  <br>
+  <hr>
+</h1>
+
+
+# X-Mega-Menu
+
+x mega menu is easy usable multi level responsive with vanillaJS (ltr and rtl support).
 
 ## How use it?
 With package manager:
@@ -188,13 +202,39 @@ xMegaMenu('#mega-menu', {
     disableLinks: true,
 });
 ```
+
+# Demo
+
+<div align="center">
+<h2>Mega Menu Style</h2>
+<img src="example/img/mega-menu.png" width="600px">
+</div>
+<div align="center">
+<h2>Blue Theme</h2>
+<img src="example/img/screen-sidemenu-blue.png" width="450px">
+</div>
+<div align="center">
+<h2>Red Theme</h2>
+<img src="example/img/screen-sidemenu-red.png" width="450px">
+</div>
+<div align="center">
+<h2>Dark Theme</h2>
+<img src="example/img/screen-sidemenu-dark.png" width="450px">
+</div>
+
+## 🔗 Links
+https://www.npmjs.com/package/x-tree-select
+<br>
+http://4xmen.ir/
+<br>
+https://xstack.ir
+
 ## DEMO (example)
 
 You can watch /example of project.
 
 ## option and events
 
-### options
 
 | name  | default  |  action  |
 | ------------ | ------------ | ------------ |
@@ -207,23 +247,49 @@ You can watch /example of project.
 |  disableLinks | `true`  | disable links when has sub menu click event otherwise on mouse enter show sub level   |
 
 
-###events
-| name    |  action  |
-| ------------  | ------------ |
-| onCloseSideMenu   |  Trigger when side menu open |
-| onOpenSideMenu |  Trigger when side menu close   |
 
-### theme
-- default (red)
-- blue
-- gray
-- dark
+## Theme
 
-# screenshots
+* Dark
+* Red
+* Blue
 
-![A Screenshot ]( ./screenshot-desktop.png?raw=true "Screen shot")
-![A Screenshot ]( ./screen-sidemenu-red.png?raw=true "Screen shot")
-![A Screenshot ]( ./screen-sidemenu-blue.png?raw=true "Screen shot")
-![A Screenshot ]( ./screen-sidemenu-dark.png?raw=true "Screen shot")
+## Report Some Bugs
+Find a Bug? Please, [create an issue](https://github.com/4xmen/x-mega-menu/issues) and we'll fix it together for a better template.
 
+## Contribution
+Contribution are always welcome and recommended! Here is how:
+
+- Fork the repository ([here is the guide](https://help.github.com/articles/fork-a-repo/)).
+- Clone to your machine git clone https://github.com/YOUR_USERNAME/Anubias-Desktop.git
+- Make your changes
+- Create a pull request
+
+## Badges
+
+<div align="center">
+
+[![X-Mega-Menu](https://img.shields.io/badge/Mega-Menu-red.svg)](https://anubias.app/)
+[![GitHub](https://img.shields.io/badge/Github-4xmen-blue.svg)](https://GitHub.com/4xmen)
+[![Xstack](https://img.shields.io/badge/Xstack-Team-red.svg)](https://xstack.ir)
+[![4xmen](https://img.shields.io/badge/4xmen-Team-black.svg)](https://4xmen.ir)
+[![Devefun](https://img.shields.io/badge/Devefun-Community-blue.svg)](https://Telegram.me/Devefun)
+
+</div>
+
+
+## License
+
+[![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/GNU)
+
+
+
+[GPL](https://www.gnu.org/licenses/gpl-3.0.en.html)
+
+
+## Support
+
+Star Repo If Like It ...
+
+<div align="center"> Developed With Love ! ❤️</div>
 
