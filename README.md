@@ -246,7 +246,11 @@ You can watch /example of project.
 |  resetMenu | `true`  | reset side menu when close  |
 |  disableLinks | `true`  | disable links when has sub menu click event otherwise on mouse enter show sub level   |
 
-
+###events
+| name    |  action  |
+| ------------  | ------------ |
+| onCloseSideMenu   |  Trigger when side menu open |
+| onOpenSideMenu |  Trigger when side menu close   |
 
 ## Theme
 
