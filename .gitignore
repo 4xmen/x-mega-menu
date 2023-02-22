@@ -265,3 +265,10 @@ fabric.properties
 .idea/caches/build_file_checksums.ser
 
 # End of https://mrkandreev.name/snippets/gitignore-generator/#Node,PhpStorm+all
+/.idea/.gitignore
+/.idea/git_toolbox_prj.xml
+/.idea/laravel-query-settings.xml
+/.idea/modules.xml
+/package-lock.json
+/.idea/vcs.xml
+/.idea/x-mege-menu.iml
