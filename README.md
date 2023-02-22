@@ -203,6 +203,20 @@ xMegaMenu('#mega-menu', {
 });
 ```
 
+# webpack or vite (`vuejs` or `reactjs`) usage
+
+1. import css or scss
+```scss
+@import "~x-mega-menu/src/x-mega-menu";
+```
+2. import js and use it
+```javascript
+import xMegaMenu from 'x-mega-menu/dist/x-mega-menu';
+xMegaMenu('#mega-menu', {
+   // options  
+});
+```
+
 # Demo
 
 <div align="center">
