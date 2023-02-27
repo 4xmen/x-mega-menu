@@ -6,6 +6,7 @@
   grid-auto-flow: column;
   list-style: none;
   box-shadow: 0 1px 4px #aaaaaa;
+  padding: 0;
 
 
   > li {
@@ -46,7 +47,7 @@
     }
 
 
-    &:hover,&.x-active {
+    &:hover, &.x-active {
       background: #ffffff;
 
       a, span {
@@ -99,6 +100,8 @@
   position: absolute;
   z-index: 999;
   box-shadow: 0 3px 7px #999999;
+  margin-bottom: 0 !important;
+
 
   h3 {
     border-bottom: 1px solid #eee;
@@ -112,7 +115,7 @@
   }
 
   li {
-
+    list-style: none;
     position: relative;
 
     li {
@@ -173,6 +176,8 @@
     display: grid;
     grid-auto-columns: minmax(0, 1fr);
     grid-auto-flow: column;
+    padding: 0;
+    margin-bottom: 0 !important;
 
     > li {
       border-right: 1px solid silver;
@@ -208,14 +213,14 @@
       bottom: 0;
       background: $main-menu-bg;
 
-      .x-back-btn{
+      .x-back-btn {
         cursor: pointer;
       }
 
     }
   }
 
-  p{
+  p {
     line-height: 1.7em;
   }
 }

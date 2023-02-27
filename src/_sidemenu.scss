@@ -5,6 +5,7 @@
 
 // side menu for responsive
 #x-side-menu {
+
   transition: 500ms;
   transition-timing-function: linear;
   width: 0;
@@ -30,6 +31,7 @@
       background: lighten($main-color, 3);
     }
     font-size: 18px;
+    margin-bottom: 0 !important;
   }
 
   .x-side-menu {
@@ -81,6 +83,7 @@
 
       ul {
         display: none;
+        padding: 0;
       }
 
       a, span {
@@ -97,7 +100,7 @@
 
     .x-close {
       float: right;
-      padding: 10px .46em;
+      padding: 5px .46em;
       font-size: 30px;
       cursor: pointer;
       @if $is-dark == 'true' {
