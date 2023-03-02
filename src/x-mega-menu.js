@@ -25,7 +25,7 @@
 })(this, (function () {
     'use strict';
 
-    let xMegaMenu = (seletor, options =
+    let xMegaMenu = window.xMegaMenu = (seletor, options =
         {
             responseWidth: '',
             barsIcon: '',
@@ -421,9 +421,7 @@
         handleResize();
 
     }
-    const index_umd = {
-        xMegaMenu
-    };
+    const index_umd = xMegaMenu;
 
     return index_umd;
 
