@@ -280,6 +280,8 @@ https://xstack.ir
 * Dark
 * Red
 * Blue
+* gray
+* customizable theme as you want
 
 ## Report Some Bugs
 Find a Bug? Please, [create an issue](https://github.com/4xmen/x-mega-menu/issues) and we'll fix it together for a better template.
@@ -296,7 +298,7 @@ Contribution are always welcome and recommended! Here is how:
 
 <div align="center">
 
-[![X-Mega-Menu](https://img.shields.io/badge/Mega-Menu-red.svg)](https://anubias.app/)
+[![X-Mega-Menu](https://img.shields.io/badge/Mega-Menu-red.svg)](https://github.com/4xmen/x-mega-menu)
 [![GitHub](https://img.shields.io/badge/Github-4xmen-blue.svg)](https://GitHub.com/4xmen)
 [![Xstack](https://img.shields.io/badge/Xstack-Team-red.svg)](https://xstack.ir)
 [![4xmen](https://img.shields.io/badge/4xmen-Team-black.svg)](https://4xmen.ir)

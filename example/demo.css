@@ -1,0 +1,26 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    border-spacing: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.demo {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+}
+
+.demo img {
+    max-width: 90%;
+}
+
+p {
+    line-height: 2em;
+}
