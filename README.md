@@ -245,7 +245,9 @@ https://xstack.ir
 
 ## DEMO (example)
 
-You can watch /example of project.
+- You can watch /example of project.
+- [online demo](https://demos.4xmen.ir/x-mega-menu/example/)
+- [online rtl demo](https://demos.4xmen.ir/x-mega-menu/example/index-rtl.html)
 
 ## option and events
 
