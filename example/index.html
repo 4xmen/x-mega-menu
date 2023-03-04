@@ -32,6 +32,10 @@
         .demo img {
             max-width: 90%;
         }
+
+        p {
+            line-height: 2em;
+        }
     </style>
 </head>
 <body dir="rtl">
@@ -221,21 +225,45 @@
     quibusdam ratione recusandae repellendus reprehenderit rerum sunt suscipit, tempore ut vero voluptatibus!
     Laboriosam.
 </p>
+<p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium blanditiis doloribus id tenetur unde.
+    Explicabo iure laboriosam mollitia nemo quas quis similique voluptate. Alias aliquid distinctio eveniet illo qui
+    sed. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis enim fuga ipsum numquam repellendus saepe
+    suscipit? Deserunt, error est maxime molestias nemo praesentium sunt ut veniam! Amet facilis molestiae vero!
+</p>
+<p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur delectus ducimus esse illum possimus quisquam
+    repellat sit, tempore velit voluptas. Aliquid animi blanditiis consequatur, dolores exercitationem facere, in
+    maiores molestiae quaerat qui quibusdam rerum similique sit voluptas voluptates! Aperiam commodi debitis dolor eaque
+    eius enim est exercitationem id, illo illum laborum libero nam nemo, neque nihil nisi quisquam, quod ratione sed
+    totam ullam ut voluptatem voluptates. Accusamus asperiores eos molestiae nisi voluptates. Ad dicta dolor, doloremque
+    ea eos fugiat ipsa laboriosam maxime nemo neque odio placeat praesentium quia quis sequi soluta ut! A ab aliquid,
+    aut blanditiis culpa deserunt distinctio dolore esse illum iste iure nam necessitatibus neque nesciunt numquam
+    officia pariatur quae quisquam ratione recusandae rerum saepe sapiente voluptates.
+</p>
+<p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquid ipsa maiores necessitatibus omnis, quibusdam
+    recusandae sint temporibus tenetur voluptates? Laudantium magni minima qui, quod rerum totam! Assumenda cupiditate
+    delectus fuga hic quas, quo totam? Debitis, dolor velit! Error, fugiat inventore ipsa molestiae quisquam reiciendis
+    sunt voluptate. Consectetur dolores enim eum fugiat id ipsam odit officiis, quam vitae. Alias, molestiae.
+</p>
+
 <img src="img/wave.svg" width="100%" alt="" style="position: fixed;bottom: -20px;">
 <script>
-        xMegaMenu('#mega-menu', {
-            responseWidth: 1000,
-            isRtl: true,
-            mainTitle: '🖤 xStack menu 🖤',
-            blurEffect: true,
-            disableLinks: true,
-            onCloseSideMenu: function () {
-                console.log('closed');
-            },
-            onOpenSideMenu: function () {
-                console.log('opened');
-            }
-        });
+    xMegaMenu('#mega-menu', {
+        responseWidth: 1000,
+        isRtl: true,
+        mainTitle: '🖤 xStack menu 🖤',
+        blurEffect: true,
+        disableLinks: true,
+        fixedTop: true,
+        onCloseSideMenu: function () {
+            console.log('closed');
+        },
+        onOpenSideMenu: function () {
+            console.log('opened');
+        }
+    });
 </script>
 </body>
 </html>

@@ -7,6 +7,12 @@
   list-style: none;
   box-shadow: 0 1px 4px #aaaaaa;
   padding: 0; }
+  .x-mega-menu.x-fixed-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 98; }
   .x-mega-menu > li {
     transition: 300ms;
     font-size: 12pt;
@@ -57,14 +63,12 @@
 .x-sub-menu {
   background: #eeeeee;
   width: 100%;
-  border: 1px solid silver;
   transform: scaleY(0) translateY(-50%);
   transition-timing-function: ease-out;
   transition: 700ms;
   opacity: 0;
   position: absolute;
-  z-index: 999;
-  box-shadow: 0 3px 7px #999999;
+  z-index: 99;
   margin-bottom: 0 !important; }
   .x-sub-menu h3 {
     border-bottom: 1px solid #eee;
@@ -104,6 +108,8 @@
       color: #2f2f2f; }
   .x-sub-menu.x-active {
     transform: scaleY(1) translateY(0);
+    border: 1px solid silver;
+    box-shadow: 0 3px 7px #999999;
     opacity: 0.9; }
   .x-sub-menu > ul {
     display: grid;
