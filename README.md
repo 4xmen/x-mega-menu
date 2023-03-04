@@ -1,11 +1,11 @@
 
 <h1 align="center">
   <br>
-  <a href="https://anubias.app/">
+  <a href="https://github.com/4xmen/x-mega-menu">
     <img src="example/img/openlogo-nd.svg" alt="X-MEGA_MENU" width="150">
   </a>
   <br>
-  <a href="https://anubias.app">X Mega Menu</a>
+  <a href="https://github.com/4xmen/x-mega-menu">X Mega Menu</a>
   <br>
   <hr>
 </h1>
@@ -13,7 +13,7 @@
 
 # X-Mega-Menu
 
-x mega menu is easy usable multi level responsive with vanillaJS (ltr and rtl support).
+x mega menu is easy usable multi level responsive with vanillaJS very fast and without any dependencies (ltr and rtl support).
 
 ## How use it?
 With package manager:
@@ -28,8 +28,8 @@ or use dist file of repo.
 
 add assets:
 ```html
-   <link rel="stylesheet" href="../dist/x-mega-menu.css">
-   <script src="../dist/x-mega-menu.js"></script>
+   <link rel="stylesheet" href="x-mega-menu/dist/x-mega-menu.min.css">
+   <script src="x-mega-menu/dist/x-mega-menu.min.js"></script>
 ```
 
 HTML:
@@ -200,6 +200,13 @@ xMegaMenu('#mega-menu', {
     mainTitle: '🖤 xStack menu 🖤',
     blurEffect: true,
     disableLinks: true,
+    fixedTop: true,
+    onCloseSideMenu: function () {
+        console.log('closed');
+    },
+    onOpenSideMenu: function () {
+        console.log('opened');
+    }
 });
 ```
 
@@ -217,7 +224,7 @@ xMegaMenu('#mega-menu', {
 });
 ```
 
-# Demo
+# Screenshots
 
 <div align="center">
 <h2>Mega Menu Style</h2>
