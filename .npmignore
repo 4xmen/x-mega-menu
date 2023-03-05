@@ -1,3 +1,5 @@
 *.png
 .idea
 .idea/*
+example
+example/*
