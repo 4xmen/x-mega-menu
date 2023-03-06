@@ -270,10 +270,14 @@ https://xstack.ir
 |  disableLinks | `true`  | disable links when has sub menu click event otherwise on mouse enter show sub level   |
 
 ###events
+<div align="center">
+
 | name    |  action  |
 | ------------  | ------------ |
 | onCloseSideMenu   |  Trigger when side menu open |
 | onOpenSideMenu |  Trigger when side menu close   |
+
+</div>
 
 ## Theme
 
@@ -293,6 +297,21 @@ Contribution are always welcome and recommended! Here is how:
 - Clone to your machine git clone https://github.com/YOUR_USERNAME/Anubias-Desktop.git
 - Make your changes
 - Create a pull request
+
+## Developing project
+
+Dependencies are `node-sass` and `minify`
+
+To render css:
+```shell
+npm run scss
+```
+
+To build:
+```shell
+npm run build
+```
+
 
 ## Badges
 
@@ -314,20 +333,6 @@ Contribution are always welcome and recommended! Here is how:
 
 
 [GPL](https://www.gnu.org/licenses/gpl-3.0.en.html)
-
-## Developing project
-
-Dependencies are `node-sass` and `minify`
-
-To render css:
-```shell
-npm run scss
-```
-
-To build:
-```shell
-npm run build
-```
 
 
 ## Support
