@@ -15,6 +15,7 @@
 
 x mega menu is easy usable multi level responsive with vanillaJS very fast and without any dependencies (ltr and rtl support).
 x TEST
+x TEST
 ## How use it?
 With package manager:
 ````
