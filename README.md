@@ -24,17 +24,16 @@ or
 ````
 yarn add x-mega-menu
 ````
-or use dist file of repo.
 
-With CDN Package:
+or you can use CDN package:
 
 CSS ⬇️
 ````
-https://cdn.jsdelivr.net/npm/x-mega-menu@1.4.1/dist/x-mega-menu.min.css
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/x-mega-menu@1.4.1/dist/x-mega-menu.min.css">
 ````
 JavaScript ⬇️
 ````
-https://cdn.jsdelivr.net/npm/x-mega-menu@1.4.1/dist/x-mega-menu.min.js
+<script src="https://cdn.jsdelivr.net/npm/x-mega-menu@1.4.1/dist/x-mega-menu.min.js"></script>
 ````
 
 add assets:
