@@ -226,7 +226,6 @@
             subMenu.style.left = '0';
             subMenu.style.right = '0';
             subMenu.style.zIndex = '99';
-
         }
 
 
