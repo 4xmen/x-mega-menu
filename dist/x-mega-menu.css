@@ -280,6 +280,7 @@
       text-align: left;
       width: 15px; }
 
+
 .x-blur {
   filter: blur(5px) grayscale(0.75);
   user-select: none;
